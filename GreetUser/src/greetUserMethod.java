@@ -1,30 +1,31 @@
 import java.util.Scanner;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
-public class greetUserMethod
+public class greetUserMethod extends JFrame
 	{
+	private static final long serialVersionUID = 1L;
+	static String name; 
+	static int className;
+	static JFrame frame = new JFrame();
+	
 
 		public static void main(String[] args)
 			{
-				greetUser();
-
-			}
-
-		private static void greetUser()
-			{
-				Scanner userInput = new Scanner(System.in);
-				System.out.println("What is your name?");
-				String name = userInput.nextLine();
-				
-				int randomNum = (int) (Math.random( ) * 3);
-				
+			
 				String [] comp = new String [4];
 				comp [0] = ", you look like you've been hitting the gym lately.";
 				comp [1] = ", I like your backpack.";
 				comp [2] = ", you look great today.";
 				comp [3] = ", you look very good today.";
-				
-				System.out.println(name + comp[randomNum]);
-				
+				int randomNum = (int) (Math.random( ) * 3);
+						name = JOptionPane.showInputDialog("What is your name?");  
+						JOptionPane.showMessageDialog(frame, "Hi, " + name + comp[randomNum]);
+						
+					
+					
 			}
-
+	
 	}
+
